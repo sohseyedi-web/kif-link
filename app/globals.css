@@ -1,0 +1,18 @@
+@import url("https://v1.fontapi.ir/css/Shabnam");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Shabnam, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#fff] min-h-svh;
+    @apply dark:bg-slate-800 dark:text-gray-200 bg-[#fff] text-gray-800;
+  }
+}
