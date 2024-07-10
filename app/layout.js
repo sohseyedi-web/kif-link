@@ -1,5 +1,5 @@
 import "./globals.css";
-import { SessionProvider } from "next-auth/react";
+import SessionWrapper from "@/providers/SessionWrapper";
 import QueryProviders from "@/providers/QueryClientWrapper";
 
 export const metadata = {
@@ -9,12 +9,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <SessionProvider>
-      <html lang="en">
-        <body suppressHydrationWarning={true}>
+    <html lang="en">
+      <body>
+        <SessionWrapper>
           <QueryProviders>{children}</QueryProviders>
-        </body>
-      </html>
-    </SessionProvider>
+        </SessionWrapper>
+      </body>
+    </html>
   );
 }
