@@ -1,17 +1,20 @@
-import { Inter } from 'next/font/google'
-import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import "./globals.css";
+import { SessionProvider } from "next-auth/react";
+import QueryProviders from "@/providers/QueryClientWrapper";
 
 export const metadata = {
-  title: 'KifLink',
-  description: 'One Link - One World',
-}
+  title: "KifLink",
+  description: "One Link - One World",
+};
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  )
+    <SessionProvider>
+      <html lang="en">
+        <body suppressHydrationWarning={true}>
+          <QueryProviders>{children}</QueryProviders>
+        </body>
+      </html>
+    </SessionProvider>
+  );
 }
