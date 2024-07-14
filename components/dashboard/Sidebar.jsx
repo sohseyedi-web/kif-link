@@ -1,18 +1,22 @@
+"use client"
 import CustomLink from "@/ui/CustomLink";
 import * as RiIcon from "react-icons/ri";
 import ThemeSwitch from "./ThemeSwitch";
+import { useSession } from "next-auth/react";
 
 const Sidebar = () => {
 
+  const {data:session} = useSession()
 
   return (
     <aside className="w-[25%] border dark:border-slate-900 rounded-2xl shadow-sm p-3 space-y-6">
       <div className="py-3 flex items-center justify-center flex-col">
-        <div className="w-16 h-16 flex items-center justify-center rounded-full bg-black">
+        {/* <div className="w-16 h-16">
           <RiIcon.RiUser3Line size={28} />
-        </div>
+        </div> */}
+        <img className="w-24 h-24 rounded-full" src={session?.user.image} alt={session?.user.name} />
         <h3 className="text-orange-500 font-semibold text-xl mt-2">
-          سهیل سیدی
+          {session?.user.name}
         </h3>
       </div>
       <ul className="flex flex-col gap-y-2">
