@@ -1,23 +1,27 @@
-"use client"
+"use client";
 import CustomLink from "@/ui/CustomLink";
 import * as RiIcon from "react-icons/ri";
 import ThemeSwitch from "./ThemeSwitch";
 import { useSession } from "next-auth/react";
+import { Suspense } from "react";
+import LoadingUi from "@/ui/LoadingUi";
 
 const Sidebar = () => {
-
-  const {data:session} = useSession()
+  const { data: session } = useSession();
 
   return (
     <aside className="w-[25%] border dark:border-slate-900 rounded-2xl shadow-sm p-3 space-y-6">
       <div className="py-3 flex items-center justify-center flex-col">
-        {/* <div className="w-16 h-16">
-          <RiIcon.RiUser3Line size={28} />
-        </div> */}
-        <img className="w-24 h-24 rounded-full" src={session?.user.image} alt={session?.user.name} />
-        <h3 className="text-orange-500 font-semibold text-xl mt-2">
-          {session?.user.name}
-        </h3>
+        <Suspense fallback={<LoadingUi />}>
+          <img
+            className="rounded-full w-20 h-20"
+            src={session?.user.image}
+            alt={session?.user.name}
+          />
+          <h3 className="text-orange-500 font-semibold text-xl mt-2">
+            {session?.user.name}
+          </h3>
+        </Suspense>
       </div>
       <ul className="flex flex-col gap-y-2">
         <CustomLink to={"/"} title={"صفحه اصلی"} />
@@ -29,7 +33,7 @@ const Sidebar = () => {
           <RiIcon.RiShutDownLine size={24} />
           خروج
         </button>
-        <ThemeSwitch/>
+        <ThemeSwitch />
       </div>
     </aside>
   );
