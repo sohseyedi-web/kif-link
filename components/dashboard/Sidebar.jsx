@@ -2,7 +2,7 @@
 import CustomLink from "@/ui/CustomLink";
 import * as RiIcon from "react-icons/ri";
 import ThemeSwitch from "./ThemeSwitch";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { Suspense } from "react";
 import LoadingUi from "@/ui/LoadingUi";
 
@@ -29,7 +29,10 @@ const Sidebar = () => {
         <CustomLink to={"/support"} title={"پشتیبانی"} />
       </ul>
       <div className="flex items-center justify-between">
-        <button className="flex items-center text-lg justify-center transition-all duration-300 gap-x-2 w-[48%] rounded-2xl hover:bg-red-500 hover:text-white h-[40px] border border-red-500 text-red-500">
+        <button
+          onClick={() => signOut()}
+          className="flex items-center text-lg justify-center transition-all duration-300 gap-x-2 w-[48%] rounded-2xl hover:bg-red-500 hover:text-white h-[40px] border border-red-500 text-red-500"
+        >
           <RiIcon.RiShutDownLine size={24} />
           خروج
         </button>
