@@ -1,13 +1,13 @@
-import "./globals.css";
+import "../../globals.css";
 import SessionWrapper from "@/providers/SessionWrapper";
 import QueryProviders from "@/providers/QueryClientWrapper";
 
 export const metadata = {
-  title: "KifLink",
+  title: "KifLink - Login/Register",
   description: "One Link - One World",
 };
 
-export default function RootLayout({ children }) {
+export default function AuthRootLayout({ children }) {
   return (
     <html lang="en">
       <body>
