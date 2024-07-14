@@ -1,29 +1,20 @@
 "use client";
-import { signIn, useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import * as RiIcon from "react-icons/ri";
 
 const FormGroup = () => {
-  const { data: session } = useSession();
-
-
   return (
-    <form className="space-y-4 flex flex-col">
-      {session ? (
-        JSON.stringify(session)
-      ) : (
-        <>
-          <BtnLogin
-            title={"ورود با گوگل"}
-            icon={<RiIcon.RiGoogleLine size={28} />}
-            onSignIn={() => signIn("google")}
-          />
-          <BtnLogin
-            title={"ورود با گیت هاب"}
-            icon={<RiIcon.RiGithubLine size={28} />}
-            onSignIn={() => signIn("github")}
-          />
-        </>
-      )}
+    <form className="flex my-2 justify-between items-center lg:flex-row flex-col gap-y-2">
+      <BtnLogin
+        title={"ورود با گوگل"}
+        icon={<RiIcon.RiGoogleLine size={26} />}
+        onSignIn={() => signIn("google")}
+      />
+      <BtnLogin
+        title={"ورود با گیت هاب"}
+        icon={<RiIcon.RiGithubLine size={26} />}
+        onSignIn={() => signIn("github")}
+      />
     </form>
   );
 };
@@ -35,7 +26,7 @@ const BtnLogin = ({ icon, title, onSignIn }) => {
     <button
       type="button"
       onClick={onSignIn}
-      className="text-lg shadow flex items-center font-semibold dark:border-slate-900 border gap-x-2 w-full justify-center py-3 rounded-3xl hover:scale-105 scale-100 transition-all duration-300"
+      className="md:text-lg lg:w-[48%] w-full text-base shadow flex items-center font-semibold dark:border-slate-900 border gap-x-2 justify-center py-3 rounded-2xl hover:bg-gray-50 transition-all duration-300"
     >
       {title}
       {icon}
