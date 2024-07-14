@@ -1,7 +1,7 @@
-export default function Support() {
+export default function Viewer() {
     return (
       <main className="">
-        support
+        view
       </main>
     );
   }
