@@ -35,7 +35,7 @@ const BtnLogin = ({ icon, title, onSignIn }) => {
     <button
       type="button"
       onClick={onSignIn}
-      className="text-lg shadow flex items-center font-semibold border gap-x-2 w-full justify-center py-3 rounded-3xl hover:scale-105 scale-100 transition-all duration-300"
+      className="text-lg shadow flex items-center font-semibold dark:border-slate-900 border gap-x-2 w-full justify-center py-3 rounded-3xl hover:scale-105 scale-100 transition-all duration-300"
     >
       {title}
       {icon}

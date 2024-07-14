@@ -11,7 +11,7 @@ const CustomLink = ({ to, title }) => {
       <li
         className={`${
           isActive
-            ? "bg-gray-50 border text-orange-500 font-semibold"
+            ? "bg-gray-50 dark:bg-gray-800 dark:border-slate-900 border text-orange-500 font-semibold"
             : "bg-transparent border-none text-inherit font-medium"
         } p-2 rounded-2xl cursor-pointer w-full`}
       >

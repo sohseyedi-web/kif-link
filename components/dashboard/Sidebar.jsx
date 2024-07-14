@@ -1,9 +1,12 @@
 import CustomLink from "@/ui/CustomLink";
 import * as RiIcon from "react-icons/ri";
+import ThemeSwitch from "./ThemeSwitch";
 
 const Sidebar = () => {
+
+
   return (
-    <aside className="w-[25%] border rounded-2xl shadow-sm p-3 space-y-6">
+    <aside className="w-[25%] border dark:border-slate-900 rounded-2xl shadow-sm p-3 space-y-6">
       <div className="py-3 flex items-center justify-center flex-col">
         <div className="w-16 h-16 flex items-center justify-center rounded-full bg-black">
           <RiIcon.RiUser3Line size={28} />
@@ -22,10 +25,7 @@ const Sidebar = () => {
           <RiIcon.RiShutDownLine size={24} />
           خروج
         </button>
-        <button className="flex items-center text-lg justify-center transition-all duration-300 gap-x-2 w-[48%] rounded-2xl hover:bg-slate-500 hover:text-white h-[40px] border border-slate-500 text-slate-500">
-          <RiIcon.RiMoonLine size={24} />
-          تاریک
-        </button>
+        <ThemeSwitch/>
       </div>
     </aside>
   );

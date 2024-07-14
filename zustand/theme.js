@@ -5,11 +5,11 @@ export const useThemeStore = create(
   persist(
     (set) => ({
       theme: "light",
-      setChangeTheme: () =>
+      toggleTheme: () =>
         set((state) => ({ theme: state.theme === "light" ? "dark" : "light" })),
     }),
     {
-      name: "theme",
+      name: "theme", // نام برای ذخیره سازی محلی
     }
   )
 );
