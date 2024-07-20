@@ -24,6 +24,11 @@ const Dashboard = () => {
         />
       </ul>
       <div className="flex-1 py-3">
+        <Link href={"/"} className="flex items-center gap-x-1 text-lg">
+          <RiIcon.RiAttachmentLine size={26} />
+          نمایش صفحه شما
+        </Link>
+        <hr className="my-3 dark:border-slate-900"/>
         <div className="mb-3">
           <label htmlFor="link" className="block mb-3 text-lg">
             لینک شخصی شما :
@@ -36,17 +41,13 @@ const Dashboard = () => {
             className="input input-bordered w-full focus:bg-white bg-gray-100 dark:bg-slate-600 dark:focus:bg-slate-950 h-[45px] transition-all duration-300 outline-none"
           />
         </div>
-        <div className="flex items-center justify-between gap-x-4">
-          <Link href="/" className="w-full">
-            <BoxSidebar
-              icon={<RiIcon.RiAttachmentLine size={26} />}
-              title={"پیش نمایش"}
-            />
-          </Link>
-          <BoxSidebar
-            icon={<RiIcon.RiPaletteLine size={26} />}
-            title={"انتخاب پالت"}
-          />
+        <div>
+          <label className="block mb-3 text-lg">
+            انتخاب پالت :
+          </label>
+          <div className="w-full p-3 my-3 h-[70px] rounded-xl border dark:border-slate-900">
+            s
+          </div>
         </div>
       </div>
     </section>
