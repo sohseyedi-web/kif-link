@@ -1,7 +1,7 @@
 import "../globals.css";
 import SessionWrapper from "@/providers/SessionWrapper";
 import QueryProviders from "@/providers/QueryClientWrapper";
-import Sidebar from "@/components/dashboard/Sidebar";
+import HeaderDashboard from "@/components/dashboard/HeaderDashboard";
 
 export const metadata = {
   title: "KifLink",
@@ -14,9 +14,10 @@ export default function RootLayout({ children }) {
       <body>
         <SessionWrapper>
           <QueryProviders>
-            <section className="max-w-screen-xl mx-auto container flex gap-x-3 py-12" dir="rtl">
-              <Sidebar />
-              <main className="flex-1">{children}</main>
+            <section className="max-w-screen-xl mx-auto container py-12" dir="rtl">
+              {/* <Sidebar /> */}
+              <HeaderDashboard/>
+              <main className="flex-1 my-5">{children}</main>
             </section>
           </QueryProviders>
         </SessionWrapper>
