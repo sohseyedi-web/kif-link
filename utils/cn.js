@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
 
-export default function cn(...classes) {
+export function cn(...classes) {
   return twMerge(clsx(classes.filter(Boolean)));
 }
