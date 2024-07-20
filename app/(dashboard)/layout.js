@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
       <body>
         <SessionWrapper>
           <QueryProviders>
-            <section className="max-w-screen-xl mx-auto container py-12" dir="rtl">
+            <section className="max-w-screen-xl mx-auto container lg:py-12" dir="rtl">
               {/* <Sidebar /> */}
               <HeaderDashboard/>
               <main className="flex-1 my-5">{children}</main>

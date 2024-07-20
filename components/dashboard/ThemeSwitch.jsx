@@ -13,7 +13,7 @@ const ThemeSwitch = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="flex items-center justify-center transition-all duration-300 w-12 h-12 rounded-full hover:bg-slate-500 hover:text-white dark:text-white dark:border-white hover:dark:bg-slate-700 border border-slate-400 text-slate-400"
+      className="flex items-center justify-center transition-all duration-300 lg:w-12 w-9 lg:h-12 h-9 rounded-full hover:bg-slate-500 hover:text-white dark:text-white dark:border-white hover:dark:bg-slate-700 border border-slate-400 text-slate-400"
     >
       {theme === "light" ? <RiMoonLine size={24} /> : <RiSunLine size={24} />}
     </button>
