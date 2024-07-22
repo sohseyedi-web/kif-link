@@ -1,6 +1,7 @@
 import "../../globals.css";
 import SessionWrapper from "@/providers/SessionWrapper";
 import QueryProviders from "@/providers/QueryClientWrapper";
+import { ThemeProvider } from "next-themes";
 
 export const metadata = {
   title: "KifLink - Login/Register",
@@ -11,9 +12,11 @@ export default function AuthRootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <SessionWrapper>
-          <QueryProviders>{children}</QueryProviders>
-        </SessionWrapper>
+        <ThemeProvider attribute="class">
+          <SessionWrapper>
+            <QueryProviders>{children}</QueryProviders>
+          </SessionWrapper>
+        </ThemeProvider>
       </body>
     </html>
   );
