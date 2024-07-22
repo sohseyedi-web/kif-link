@@ -5,8 +5,8 @@ import PalletBox from "./PalletBox";
 const Account = () => {
   return (
     <>
-      <Link href={"/"} className="flex items-center gap-x-1 lg:text-lg">
-        <RiAttachmentLine className="lg:w-7 lg:h-7 w-5 h-5" />
+      <Link href={"/"} className="lg:text-lg">
+        <RiAttachmentLine className="lg:w-7 lg:h-7 w-5 h-5 inline-block ml-1" />
         نمایش صفحه شما
       </Link>
       <hr className="my-3 dark:border-slate-900" />
